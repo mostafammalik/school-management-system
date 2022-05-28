@@ -1,0 +1,11 @@
+C:\Users\Ali20\OneDrive\Desktop\projectSE\projectSE\bin\Debug\projectSE.exe.config
+C:\Users\Ali20\OneDrive\Desktop\projectSE\projectSE\bin\Debug\projectSE.exe
+C:\Users\Ali20\OneDrive\Desktop\projectSE\projectSE\bin\Debug\projectSE.pdb
+C:\Users\Ali20\OneDrive\Desktop\projectSE\projectSE\obj\Debug\projectSE.csprojResolveAssemblyReference.cache
+C:\Users\Ali20\OneDrive\Desktop\projectSE\projectSE\obj\Debug\projectSE.Properties.Resources.resources
+C:\Users\Ali20\OneDrive\Desktop\projectSE\projectSE\obj\Debug\projectSE.csproj.GenerateResource.Cache
+C:\Users\Ali20\OneDrive\Desktop\projectSE\projectSE\obj\Debug\projectSE.exe
+C:\Users\Ali20\OneDrive\Desktop\projectSE\projectSE\obj\Debug\projectSE.pdb
+C:\Users\Ali20\OneDrive\Desktop\projectSE\projectSE\obj\Debug\projectSE.payment.resources
+C:\Users\Ali20\OneDrive\Desktop\projectSE\projectSE\obj\Debug\projectSE.grade.resources
+C:\Users\Ali20\OneDrive\Desktop\projectSE\projectSE\obj\Debug\projectSE.report.resources

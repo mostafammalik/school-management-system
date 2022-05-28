@@ -1,0 +1,17 @@
+R:\school project\A7Aproject\obj\Debug\A7Aproject.csprojResolveAssemblyReference.cache
+R:\school project\A7Aproject\obj\Debug\A7Aproject.home.resources
+R:\school project\A7Aproject\obj\Debug\A7Aproject.Properties.Resources.resources
+R:\school project\A7Aproject\obj\Debug\A7Aproject.csproj.GenerateResource.Cache
+R:\school project\A7Aproject\bin\Debug\A7Aproject.exe
+R:\school project\A7Aproject\bin\Debug\A7Aproject.pdb
+R:\school project\A7Aproject\obj\Debug\A7Aproject.exe
+R:\school project\A7Aproject\obj\Debug\A7Aproject.pdb
+R:\school project\A7Aproject\obj\Debug\A7Aproject.login.resources
+R:\school project\A7Aproject\obj\Debug\A7Aproject.Register.resources
+R:\school project\A7Aproject\obj\Debug\A7Aproject.forget_password.resources
+R:\school project\A7Aproject\obj\Debug\A7Aproject.student.resources
+R:\school project\A7Aproject\obj\Debug\A7Aproject.material.resources
+R:\school project\A7Aproject\obj\Debug\projectSE.grade.resources
+R:\school project\A7Aproject\obj\Debug\A7Aproject.payment.resources
+R:\school project\A7Aproject\obj\Debug\A7Aproject.classes.resources
+R:\school project\A7Aproject\obj\Debug\A7Aproject.teacher.resources
