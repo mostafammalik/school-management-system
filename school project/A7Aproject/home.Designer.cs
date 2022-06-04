@@ -64,9 +64,17 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.btn_log_out = new System.Windows.Forms.Button();
+            this.fdg = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lbl_std = new System.Windows.Forms.Label();
+            this.lbl_teacher = new System.Windows.Forms.Label();
+            this.lbl_class = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_small)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_big)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -130,6 +138,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(77)))), ((int)(((byte)(89)))));
+            this.panel2.Controls.Add(this.btn_log_out);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 56);
             this.panel2.Name = "panel2";
@@ -148,7 +157,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.pictureBox2.Location = new System.Drawing.Point(529, 83);
+            this.pictureBox2.Location = new System.Drawing.Point(494, 83);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(208, 90);
             this.pictureBox2.TabIndex = 3;
@@ -157,7 +166,7 @@
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.pictureBox3.Location = new System.Drawing.Point(795, 83);
+            this.pictureBox3.Location = new System.Drawing.Point(748, 83);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(208, 90);
             this.pictureBox3.TabIndex = 4;
@@ -492,12 +501,90 @@
             this.label6.TabIndex = 33;
             this.label6.Text = "Contact us";
             // 
+            // btn_log_out
+            // 
+            this.btn_log_out.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_log_out.Location = new System.Drawing.Point(16, 617);
+            this.btn_log_out.Name = "btn_log_out";
+            this.btn_log_out.Size = new System.Drawing.Size(120, 32);
+            this.btn_log_out.TabIndex = 0;
+            this.btn_log_out.Text = "Log out";
+            this.btn_log_out.UseVisualStyleBackColor = true;
+            this.btn_log_out.Click += new System.EventHandler(this.btn_log_out_Click);
+            // 
+            // fdg
+            // 
+            this.fdg.AutoSize = true;
+            this.fdg.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fdg.Location = new System.Drawing.Point(250, 85);
+            this.fdg.Name = "fdg";
+            this.fdg.Size = new System.Drawing.Size(80, 25);
+            this.fdg.TabIndex = 34;
+            this.fdg.Text = "Student";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(497, 83);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(85, 25);
+            this.label9.TabIndex = 35;
+            this.label9.Text = "Teacher";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(752, 87);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(78, 25);
+            this.label10.TabIndex = 36;
+            this.label10.Text = "classes";
+            // 
+            // lbl_std
+            // 
+            this.lbl_std.AutoSize = true;
+            this.lbl_std.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_std.Location = new System.Drawing.Point(431, 145);
+            this.lbl_std.Name = "lbl_std";
+            this.lbl_std.Size = new System.Drawing.Size(23, 25);
+            this.lbl_std.TabIndex = 37;
+            this.lbl_std.Text = "0";
+            // 
+            // lbl_teacher
+            // 
+            this.lbl_teacher.AutoSize = true;
+            this.lbl_teacher.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_teacher.Location = new System.Drawing.Point(679, 145);
+            this.lbl_teacher.Name = "lbl_teacher";
+            this.lbl_teacher.Size = new System.Drawing.Size(23, 25);
+            this.lbl_teacher.TabIndex = 38;
+            this.lbl_teacher.Text = "0";
+            // 
+            // lbl_class
+            // 
+            this.lbl_class.AutoSize = true;
+            this.lbl_class.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_class.Location = new System.Drawing.Point(933, 145);
+            this.lbl_class.Name = "lbl_class";
+            this.lbl_class.Size = new System.Drawing.Size(23, 25);
+            this.lbl_class.TabIndex = 39;
+            this.lbl_class.Text = "0";
+            this.lbl_class.Click += new System.EventHandler(this.label13_Click);
+            // 
             // home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1132, 749);
+            this.Controls.Add(this.lbl_class);
+            this.Controls.Add(this.lbl_teacher);
+            this.Controls.Add(this.lbl_std);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.fdg);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
@@ -534,11 +621,12 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "home";
             this.Text = "Home";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.home_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_small)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_big)).EndInit();
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -605,6 +693,13 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btn_log_out;
+        private System.Windows.Forms.Label fdg;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lbl_std;
+        private System.Windows.Forms.Label lbl_teacher;
+        private System.Windows.Forms.Label lbl_class;
 
 
     }

@@ -216,6 +216,7 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "payment";
             this.Text = "payment";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.payment_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_small)).EndInit();

@@ -20,12 +20,9 @@ namespace A7Aproject
 
         private void home_Load(object sender, EventArgs e)
         {
-           
-            
-            
-            
-            
-
+            lbl_std.Text = d.count_students().ToString();
+            lbl_teacher.Text = d.count_teachers().ToString();
+            lbl_class.Text = d.count_class().ToString();
         }
 
         private void pic_small_MouseHover(object sender, EventArgs e)
@@ -172,6 +169,18 @@ namespace A7Aproject
             teacher t = new teacher();
             t.Show();
             this.Hide();
+        }
+
+        private void btn_log_out_Click(object sender, EventArgs e)
+        {
+            login l = new login();
+            l.Show();
+            this.Close();
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

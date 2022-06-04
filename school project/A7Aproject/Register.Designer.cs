@@ -270,6 +270,7 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Register";
             this.Text = " ";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Register_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_small)).EndInit();

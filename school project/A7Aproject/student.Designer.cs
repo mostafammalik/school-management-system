@@ -33,11 +33,16 @@
             this.pic_small = new System.Windows.Forms.PictureBox();
             this.pic_big = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_show = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panelADD = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txt_std_id = new System.Windows.Forms.TextBox();
+            this.btn_update_std = new System.Windows.Forms.Button();
+            this.btn_get_std = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.f_id = new System.Windows.Forms.TextBox();
             this.btn_add2 = new System.Windows.Forms.Button();
@@ -62,11 +67,6 @@
             this.panelShow = new System.Windows.Forms.Panel();
             this.cbx_select_class = new System.Windows.Forms.ComboBox();
             this.dgv_student = new System.Windows.Forms.DataGridView();
-            this.btn_show = new System.Windows.Forms.Button();
-            this.btn_get_std = new System.Windows.Forms.Button();
-            this.btn_update_std = new System.Windows.Forms.Button();
-            this.txt_std_id = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_small)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_big)).BeginInit();
@@ -126,6 +126,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(228, 517);
             this.panel2.TabIndex = 1;
+            // 
+            // btn_show
+            // 
+            this.btn_show.Location = new System.Drawing.Point(12, 258);
+            this.btn_show.Name = "btn_show";
+            this.btn_show.Size = new System.Drawing.Size(143, 39);
+            this.btn_show.TabIndex = 7;
+            this.btn_show.Text = "Show student";
+            this.btn_show.UseVisualStyleBackColor = true;
+            this.btn_show.Click += new System.EventHandler(this.btn_show_Click);
             // 
             // button1
             // 
@@ -196,6 +206,46 @@
             this.panelADD.Name = "panelADD";
             this.panelADD.Size = new System.Drawing.Size(301, 414);
             this.panelADD.TabIndex = 7;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 54);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(27, 24);
+            this.label5.TabIndex = 39;
+            this.label5.Text = "ID";
+            this.label5.Visible = false;
+            // 
+            // txt_std_id
+            // 
+            this.txt_std_id.Location = new System.Drawing.Point(115, 54);
+            this.txt_std_id.Name = "txt_std_id";
+            this.txt_std_id.Size = new System.Drawing.Size(170, 29);
+            this.txt_std_id.TabIndex = 38;
+            this.txt_std_id.Visible = false;
+            // 
+            // btn_update_std
+            // 
+            this.btn_update_std.Location = new System.Drawing.Point(115, 259);
+            this.btn_update_std.Name = "btn_update_std";
+            this.btn_update_std.Size = new System.Drawing.Size(81, 35);
+            this.btn_update_std.TabIndex = 37;
+            this.btn_update_std.Text = "Update";
+            this.btn_update_std.UseVisualStyleBackColor = true;
+            this.btn_update_std.Visible = false;
+            this.btn_update_std.Click += new System.EventHandler(this.btn_update_std_Click);
+            // 
+            // btn_get_std
+            // 
+            this.btn_get_std.Location = new System.Drawing.Point(204, 259);
+            this.btn_get_std.Name = "btn_get_std";
+            this.btn_get_std.Size = new System.Drawing.Size(81, 35);
+            this.btn_get_std.TabIndex = 36;
+            this.btn_get_std.Text = "Get info";
+            this.btn_get_std.UseVisualStyleBackColor = true;
+            this.btn_get_std.Visible = false;
+            this.btn_get_std.Click += new System.EventHandler(this.btn_get_std_Click);
             // 
             // label1
             // 
@@ -409,56 +459,6 @@
             this.dgv_student.Size = new System.Drawing.Size(431, 336);
             this.dgv_student.TabIndex = 0;
             // 
-            // btn_show
-            // 
-            this.btn_show.Location = new System.Drawing.Point(12, 258);
-            this.btn_show.Name = "btn_show";
-            this.btn_show.Size = new System.Drawing.Size(143, 39);
-            this.btn_show.TabIndex = 7;
-            this.btn_show.Text = "Show student";
-            this.btn_show.UseVisualStyleBackColor = true;
-            this.btn_show.Click += new System.EventHandler(this.btn_show_Click);
-            // 
-            // btn_get_std
-            // 
-            this.btn_get_std.Location = new System.Drawing.Point(204, 259);
-            this.btn_get_std.Name = "btn_get_std";
-            this.btn_get_std.Size = new System.Drawing.Size(81, 35);
-            this.btn_get_std.TabIndex = 36;
-            this.btn_get_std.Text = "Get info";
-            this.btn_get_std.UseVisualStyleBackColor = true;
-            this.btn_get_std.Visible = false;
-            this.btn_get_std.Click += new System.EventHandler(this.btn_get_std_Click);
-            // 
-            // btn_update_std
-            // 
-            this.btn_update_std.Location = new System.Drawing.Point(115, 259);
-            this.btn_update_std.Name = "btn_update_std";
-            this.btn_update_std.Size = new System.Drawing.Size(81, 35);
-            this.btn_update_std.TabIndex = 37;
-            this.btn_update_std.Text = "Update";
-            this.btn_update_std.UseVisualStyleBackColor = true;
-            this.btn_update_std.Visible = false;
-            this.btn_update_std.Click += new System.EventHandler(this.btn_update_std_Click);
-            // 
-            // txt_std_id
-            // 
-            this.txt_std_id.Location = new System.Drawing.Point(115, 54);
-            this.txt_std_id.Name = "txt_std_id";
-            this.txt_std_id.Size = new System.Drawing.Size(170, 29);
-            this.txt_std_id.TabIndex = 38;
-            this.txt_std_id.Visible = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 54);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(27, 24);
-            this.label5.TabIndex = 39;
-            this.label5.Text = "ID";
-            this.label5.Visible = false;
-            // 
             // student
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -475,6 +475,7 @@
             this.Name = "student";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "student";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.student_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_small)).EndInit();

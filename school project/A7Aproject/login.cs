@@ -45,8 +45,22 @@ namespace A7Aproject
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            d.authentication(txt_username.Text, txt_password.Text);
+            if (d.authentication(txt_username.Text, txt_password.Text) == true)
+            {
+                home h = new home();
+                h.Show();
+                this.Hide();
+            }
+                
+
             
+        }
+
+        private void llk1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Register r = new Register();
+            r.Show();
+            this.Hide();
         }
     }
 }

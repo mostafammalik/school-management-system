@@ -258,6 +258,7 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "material";
             this.Text = "material";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.material_Load);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

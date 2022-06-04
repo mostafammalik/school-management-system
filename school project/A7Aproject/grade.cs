@@ -67,5 +67,46 @@ namespace projectSE
             this.Hide();
         }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                d.insert_grade(txt_std.Text, txt_mat.Text, Convert.ToInt32(txt_grade.Text));
+            }
+            catch
+            {
+                MessageBox.Show("", "Enter valid data ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //d.all_grades_of_one_student(dgv_grade, txt_name.Text); 
+            cmd.animate_hight(panel_grade, 0, 471);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            cmd.animate_hight(panel_add, 0, 471);
+           
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            cmd.animate_hight(panel_add, 0, 471);
+        }
+
+        private void btn_up_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                d.update_grade(txt_std.Text, txt_mat.Text, Convert.ToInt32(txt_grade.Text));
+            }
+            catch
+            {
+                MessageBox.Show("", "Enter numeric grade", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }

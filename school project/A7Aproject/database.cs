@@ -79,10 +79,7 @@ namespace A7Aproject
                 else
                 {
                     MessageBox.Show("successfull login", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    home h = new home();
-                    h.Show();
-                    login l = new login();
-                    l.Hide();
+                   
                     return true;
                 }
 
@@ -169,7 +166,7 @@ namespace A7Aproject
             //try
             //{
                 open_connection();
-                cmd = new SqlCommand("insert into class(id,name,teacher_id) values('"+id+"' ,'" + name + "' ,'" + teacher_id + "' ) ;", con);
+                cmd = new SqlCommand("insert into class(id,cname,teacher_id) values('"+id+"' ,'" + name + "' ,'" + teacher_id + "' ) ;", con);
                 cmd.ExecuteNonQuery();
                 close_connection();
                 MessageBox.Show("Class Added successfully", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -502,6 +499,26 @@ namespace A7Aproject
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);
                  i = Convert.ToInt32(dt.Rows.Count.ToString());
+                close_connection();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return i;
+        }
+        public int count_class()
+        {
+            int i = 0;
+            try
+            {
+                open_connection();
+                cmd = new SqlCommand("select * from class ;", con);
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                i = Convert.ToInt32(dt.Rows.Count.ToString());
                 close_connection();
             }
             catch (Exception ex)
@@ -930,6 +947,23 @@ namespace A7Aproject
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        public void update_grade(string name ,string mtname ,int grade)
+        {
+            try
+            {
+                open_connection();
+                cmd = new SqlCommand("update grade set grade ='" + grade + "' where std_id =(select id from student where name ='"+name+"' )and mat_id = (select id from material where mtname ='"+mtname+"') ;", con);
+                cmd.ExecuteNonQuery();
+
+                close_connection();
+                MessageBox.Show("grade updated successfully", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         public bool is_this_student_exists(string name)
         {
             int i = 0;
@@ -979,16 +1013,15 @@ namespace A7Aproject
 
             try
             {
-
-
                 open_connection();
-                cmd = new SqlCommand("select name ,mtname,grade  from student s inner join material mt on s.id =(select id from student where name='"+name+"') inner join  grade g on g.mat_id =mt.id;", con);
+                cmd = new SqlCommand("select name , mtname , grade from student s inner join material mt on s.id =(select id from student where name='"+name+"') inner join  grade g on g.mat_id =mt.id;", con);
                 cmd.ExecuteNonQuery();
                 DataTable dt = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);
                 dgv.DataSource = dt;
                 close_connection();
+                MessageBox.Show("done");
             }
             catch (Exception ex)
             {

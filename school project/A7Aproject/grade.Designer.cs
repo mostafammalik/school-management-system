@@ -30,15 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(grade));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pic_small = new System.Windows.Forms.PictureBox();
+            this.pic_big = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel_add = new System.Windows.Forms.Panel();
+            this.btn_up = new System.Windows.Forms.Button();
+            this.txt_std = new System.Windows.Forms.TextBox();
+            this.txt_mat = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.txt_grade = new System.Windows.Forms.TextBox();
@@ -52,15 +54,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txt_name = new System.Windows.Forms.TextBox();
             this.dgv_grade = new System.Windows.Forms.DataGridView();
-            this.pic_small = new System.Windows.Forms.PictureBox();
-            this.pic_big = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel_grade.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_grade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_small)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_big)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.panel_add.SuspendLayout();
+            this.panel_grade.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_grade)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -75,6 +75,31 @@
             this.panel1.Size = new System.Drawing.Size(1370, 52);
             this.panel1.TabIndex = 0;
             // 
+            // pic_small
+            // 
+            this.pic_small.Image = ((System.Drawing.Image)(resources.GetObject("pic_small.Image")));
+            this.pic_small.Location = new System.Drawing.Point(33, 4);
+            this.pic_small.Name = "pic_small";
+            this.pic_small.Size = new System.Drawing.Size(47, 38);
+            this.pic_small.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_small.TabIndex = 5;
+            this.pic_small.TabStop = false;
+            this.pic_small.MouseHover += new System.EventHandler(this.pic_small_MouseHover);
+            // 
+            // pic_big
+            // 
+            this.pic_big.Image = ((System.Drawing.Image)(resources.GetObject("pic_big.Image")));
+            this.pic_big.Location = new System.Drawing.Point(29, 3);
+            this.pic_big.Name = "pic_big";
+            this.pic_big.Size = new System.Drawing.Size(54, 45);
+            this.pic_big.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_big.TabIndex = 6;
+            this.pic_big.TabStop = false;
+            this.pic_big.Visible = false;
+            this.pic_big.Click += new System.EventHandler(this.pic_big_Click);
+            this.pic_big.MouseLeave += new System.EventHandler(this.pic_big_MouseLeave);
+            this.pic_big.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pic_big_MouseMove);
+            // 
             // panel2
             // 
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -86,7 +111,6 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(77)))), ((int)(((byte)(89)))));
             this.panel3.Controls.Add(this.button4);
-            this.panel3.Controls.Add(this.button3);
             this.panel3.Controls.Add(this.button2);
             this.panel3.Controls.Add(this.button1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
@@ -99,24 +123,14 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(17, 351);
+            this.button4.Location = new System.Drawing.Point(17, 280);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(153, 44);
+            this.button4.Size = new System.Drawing.Size(153, 39);
             this.button4.TabIndex = 3;
             this.button4.Text = "Show ";
             this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(17, 283);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(153, 38);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Delete ";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button2
             // 
@@ -128,6 +142,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Update";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -139,40 +154,54 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // panel4
+            // panel_add
             // 
-            this.panel4.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panel4.Controls.Add(this.textBox2);
-            this.panel4.Controls.Add(this.textBox1);
-            this.panel4.Controls.Add(this.label4);
-            this.panel4.Controls.Add(this.button5);
-            this.panel4.Controls.Add(this.txt_grade);
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Controls.Add(this.label1);
-            this.panel4.Controls.Add(this.cbx_class);
-            this.panel4.Location = new System.Drawing.Point(286, 107);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(408, 471);
-            this.panel4.TabIndex = 2;
+            this.panel_add.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panel_add.Controls.Add(this.btn_up);
+            this.panel_add.Controls.Add(this.txt_std);
+            this.panel_add.Controls.Add(this.txt_mat);
+            this.panel_add.Controls.Add(this.label4);
+            this.panel_add.Controls.Add(this.button5);
+            this.panel_add.Controls.Add(this.txt_grade);
+            this.panel_add.Controls.Add(this.label3);
+            this.panel_add.Controls.Add(this.label2);
+            this.panel_add.Controls.Add(this.label1);
+            this.panel_add.Controls.Add(this.cbx_class);
+            this.panel_add.Location = new System.Drawing.Point(286, 107);
+            this.panel_add.Margin = new System.Windows.Forms.Padding(4);
+            this.panel_add.Name = "panel_add";
+            this.panel_add.Size = new System.Drawing.Size(408, 471);
+            this.panel_add.TabIndex = 2;
             // 
-            // textBox2
+            // btn_up
             // 
-            this.textBox2.Location = new System.Drawing.Point(150, 167);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(242, 29);
-            this.textBox2.TabIndex = 12;
+            this.btn_up.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_up.Location = new System.Drawing.Point(150, 373);
+            this.btn_up.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_up.Name = "btn_up";
+            this.btn_up.Size = new System.Drawing.Size(242, 44);
+            this.btn_up.TabIndex = 13;
+            this.btn_up.Text = "update";
+            this.btn_up.UseVisualStyleBackColor = true;
+            this.btn_up.Click += new System.EventHandler(this.btn_up_Click);
             // 
-            // textBox1
+            // txt_std
             // 
-            this.textBox1.Location = new System.Drawing.Point(150, 105);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(242, 29);
-            this.textBox1.TabIndex = 11;
+            this.txt_std.Location = new System.Drawing.Point(150, 167);
+            this.txt_std.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_std.Name = "txt_std";
+            this.txt_std.Size = new System.Drawing.Size(242, 29);
+            this.txt_std.TabIndex = 12;
+            // 
+            // txt_mat
+            // 
+            this.txt_mat.Location = new System.Drawing.Point(150, 105);
+            this.txt_mat.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_mat.Name = "txt_mat";
+            this.txt_mat.Size = new System.Drawing.Size(242, 29);
+            this.txt_mat.TabIndex = 11;
             // 
             // label4
             // 
@@ -195,6 +224,7 @@
             this.button5.TabIndex = 4;
             this.button5.Text = "OK";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // txt_grade
             // 
@@ -258,7 +288,7 @@
             this.panel_grade.Location = new System.Drawing.Point(725, 107);
             this.panel_grade.Margin = new System.Windows.Forms.Padding(4);
             this.panel_grade.Name = "panel_grade";
-            this.panel_grade.Size = new System.Drawing.Size(390, 393);
+            this.panel_grade.Size = new System.Drawing.Size(390, 471);
             this.panel_grade.TabIndex = 3;
             // 
             // btn_show
@@ -302,54 +332,30 @@
             this.dgv_grade.Size = new System.Drawing.Size(356, 241);
             this.dgv_grade.TabIndex = 0;
             // 
-            // pic_small
-            // 
-            this.pic_small.Image = ((System.Drawing.Image)(resources.GetObject("pic_small.Image")));
-            this.pic_small.Location = new System.Drawing.Point(33, 4);
-            this.pic_small.Name = "pic_small";
-            this.pic_small.Size = new System.Drawing.Size(47, 38);
-            this.pic_small.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_small.TabIndex = 5;
-            this.pic_small.TabStop = false;
-            this.pic_small.MouseHover += new System.EventHandler(this.pic_small_MouseHover);
-            // 
-            // pic_big
-            // 
-            this.pic_big.Image = ((System.Drawing.Image)(resources.GetObject("pic_big.Image")));
-            this.pic_big.Location = new System.Drawing.Point(29, 3);
-            this.pic_big.Name = "pic_big";
-            this.pic_big.Size = new System.Drawing.Size(54, 45);
-            this.pic_big.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_big.TabIndex = 6;
-            this.pic_big.TabStop = false;
-            this.pic_big.Visible = false;
-            this.pic_big.Click += new System.EventHandler(this.pic_big_Click);
-            this.pic_big.MouseLeave += new System.EventHandler(this.pic_big_MouseLeave);
-            this.pic_big.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pic_big_MouseMove);
-            // 
             // grade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.panel_grade);
-            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel_add);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "grade";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.grade_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pic_small)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_big)).EndInit();
             this.panel3.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.panel_add.ResumeLayout(false);
+            this.panel_add.PerformLayout();
             this.panel_grade.ResumeLayout(false);
             this.panel_grade.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_grade)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_small)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_big)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -360,10 +366,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel_add;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox txt_grade;
         private System.Windows.Forms.Label label3;
@@ -374,13 +379,14 @@
         private System.Windows.Forms.Panel panel_grade;
         private System.Windows.Forms.DataGridView dgv_grade;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_std;
+        private System.Windows.Forms.TextBox txt_mat;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_name;
         private System.Windows.Forms.Button btn_show;
         private System.Windows.Forms.PictureBox pic_small;
         private System.Windows.Forms.PictureBox pic_big;
+        private System.Windows.Forms.Button btn_up;
     }
 }
 
